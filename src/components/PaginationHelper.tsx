@@ -31,11 +31,11 @@ const PaginationHelper: FC<IProps> = ({
   return (
     <div className="flex items-center gap-2 md:ml-auto">
       {isSearching || loading ? (
-        <div className="h-6 w-6 animate-spin rounded-full border-b-2 border-white/50"></div>
+        <div className="h-6 w-6 animate-spin  border-b-2 border-white/50"></div>
       ) : (
         <>
           <button
-            className="rounded-lg bg-white/5 px-4 py-2 text-white shadow-2xl disabled:opacity-50"
+            className=" bg-white/5 px-4 py-2 text-white shadow-2xl disabled:opacity-50"
             onClick={() => setPage(page - 1)}
             disabled={page === 1}
           >
@@ -56,13 +56,13 @@ const PaginationHelper: FC<IProps> = ({
           </button>
           <input
             type="number"
-            className="w-16 rounded-lg bg-white/5 p-2 text-white shadow-2xl focus:border-0 focus:outline-none focus:ring-0 active:border-0 active:outline-none active:ring-0"
+            className="w-16  bg-white/5 p-2 text-white shadow-2xl focus:border-0 focus:outline-none focus:ring-0 active:border-0 active:outline-none active:ring-0"
             onChange={(e) => setPageInput(Number(e.target.value))}
             value={pageInput}
           />
 
           <button
-            className="rounded-lg bg-white/5 px-4 py-2 text-white shadow-2xl"
+            className=" bg-white/5 px-4 py-2 text-white shadow-2xl"
             onClick={() => setPage(page + 1)}
             disabled={page === noOfPages}
           >

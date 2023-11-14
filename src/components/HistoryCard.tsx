@@ -14,7 +14,7 @@ export const HistoryCard: FC<HistoryCardProps> = ({ event }) => {
       href={`${blockExplorer}/tx/${event.transaction.transactionHash}`}
       target="_blank"
       rel="noreferrer"
-      className="flex flex-col items-center justify-evenly gap-4 rounded-xl border-2 border-gray-800 p-4 lg:flex-row"
+      className="flex flex-col items-center justify-evenly gap-4  border-2 border-gray-800 p-4 lg:flex-row"
       key={event.transaction.transactionHash}
     >
       <div className="flex flex-col gap-2">

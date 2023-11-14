@@ -1,6 +1,6 @@
 import { Header } from "@/components";
 import { HistoryCard } from "@/components/HistoryCard";
-import { PoweredBy } from "@/components/PoweredBy";
+
 import { contractAddress } from "@/consts/parameters";
 import { truncateAddress } from "@/utils/truncateAddress";
 import {
@@ -37,7 +37,7 @@ const NFTPage = () => {
   }, []);
 
   return (
-    <div className="m-0 min-h-screen bg-[#0A0A0A] p-0 font-inter text-neutral-200">
+    <div className="m-0 min-h-screen bg-teal-500 p-0 font-inter text-neutral-200">
       <Header />
 
       <Helmet>
@@ -49,11 +49,11 @@ const NFTPage = () => {
           {nft ? (
             <ThirdwebNftMedia
               metadata={nft?.metadata}
-              className="!md:h-96 !md:w-96 !h-full !max-h-[600px] !w-full !max-w-[600px] !rounded-lg !object-cover"
+              className="!md:h-96 !md:w-96 !h-full !max-h-[600px] !w-full !max-w-[600px]  !object-cover"
             />
           ) : (
             isLoading && (
-              <div className="h-full max-h-[600px] w-full !max-w-[600px] animate-pulse rounded-lg bg-gray-800 md:h-96 md:w-96" />
+              <div className="h-full max-h-[600px] w-full !max-w-[600px] animate-pulse bg-gray-800 md:h-96 md:w-96" />
             )
           )}
 
@@ -63,12 +63,12 @@ const NFTPage = () => {
             </p>
           ) : (
             isLoading && (
-              <div className="mt-8 hidden h-8 w-1/2 animate-pulse rounded-lg bg-gray-800 md:flex" />
+              <div className="mt-8 hidden h-8 w-1/2 animate-pulse bg-gray-800 md:flex" />
             )
           )}
 
           {eventsLoading ? (
-            <div className="mt-2 hidden h-8 w-1/2 animate-pulse rounded-lg bg-gray-800 md:flex" />
+            <div className="mt-2 hidden h-8 w-1/2 animate-pulse bg-gray-800 md:flex" />
           ) : (
             <div className="mt-4 hidden flex-col gap-4 md:flex">
               {eventsData?.map((event) => (
@@ -86,12 +86,12 @@ const NFTPage = () => {
               </p>
             ) : (
               isLoading && (
-                <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+                <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
               )
             )}
 
             {isLoading ? (
-              <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+              <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
             ) : (
               <p className="text-3xl font-bold text-white">
                 {contractMetadata?.name}
@@ -110,7 +110,7 @@ const NFTPage = () => {
               </p>
             ) : (
               isLoading && (
-                <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+                <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
               )
             )}
           </div>
@@ -122,12 +122,12 @@ const NFTPage = () => {
               </p>
             ) : (
               isLoading && (
-                <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+                <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
               )
             )}
 
             {isLoading ? (
-              <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+              <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
             ) : (
               <p className="text-3xl font-bold text-white">
                 {truncateAddress(nft?.owner!)}
@@ -141,12 +141,12 @@ const NFTPage = () => {
             </p>
           ) : (
             isLoading && (
-              <div className="mt-8 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+              <div className="mt-8 h-8 w-1/2 animate-pulse bg-gray-800" />
             )
           )}
 
           {isLoading ? (
-            <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+            <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
           ) : (
             <p className="text-lg font-medium text-white">
               {nft?.metadata.description}
@@ -159,7 +159,7 @@ const NFTPage = () => {
               nft?.metadata.attributes.length > 0 && (
                 <>
                   {isLoading ? (
-                    <div className="mt-2 h-8 w-1/2 animate-pulse rounded-lg bg-gray-800" />
+                    <div className="mt-2 h-8 w-1/2 animate-pulse bg-gray-800" />
                   ) : (
                     <p className="text-lg font-semibold uppercase text-[#646D7A]">
                       Attributes
@@ -169,7 +169,7 @@ const NFTPage = () => {
                     {/* @ts-ignore */}
                     {nft?.metadata.attributes?.map(
                       (attr: { trait_type: string; value: string }) => (
-                        <div className="flex flex-col rounded-lg border border-gray-700 p-4">
+                        <div className="flex flex-col border border-gray-700 p-4">
                           <h2 className="text-sm font-semibold text-[#646D7A]">
                             {attr.trait_type}
                           </h2>
@@ -189,12 +189,12 @@ const NFTPage = () => {
               </p>
             ) : (
               isLoading && (
-                <div className="mt-8 flex h-8 w-1/2 animate-pulse rounded-lg bg-gray-800 md:hidden" />
+                <div className="mt-8 flex h-8 w-1/2 animate-pulse bg-gray-800 md:hidden" />
               )
             )}
 
             {eventsLoading ? (
-              <div className="mt-2 flex h-8 w-1/2 animate-pulse rounded-lg bg-gray-800 md:hidden" />
+              <div className="mt-2 flex h-8 w-1/2 animate-pulse bg-gray-800 md:hidden" />
             ) : (
               <div className="mt-4  flex flex-col gap-4 md:hidden">
                 {eventsData?.map((event) => (
@@ -205,7 +205,7 @@ const NFTPage = () => {
           </div>
 
           <div className="mb-8 mt-auto md:mb-40 md:w-full">
-            <PoweredBy />
+            
           </div>
         </div>
       </div>

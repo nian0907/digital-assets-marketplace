@@ -44,7 +44,7 @@ function App() {
   }, [debouncedSearchTerm]);
 
   return (
-    <div className="m-0 bg-[#0A0A0A] p-0 font-inter text-neutral-200">
+    <div className="m-0 bg-teal-500 p-0 font-inter text-gray-800">
       <Header />
 
       <Helmet>
@@ -54,21 +54,21 @@ function App() {
       <div className="z-20 mx-auto flex min-h-screen w-full flex-col px-4">
         {contractMetadata ? (
           <div className="mb-8 text-center">
-            <h1 className="text-4xl font-bold text-white">
+            <h1 className="text-4xl font-bold text-gray-800">
               {contractMetadata.name}
             </h1>
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-gray-800">
               {contractMetadata.description}
             </h2>
           </div>
         ) : contractLoading ? (
           <div className="mx-auto mb-8 text-center">
-            <div className="mx-auto h-8 w-96 animate-pulse rounded-lg bg-gray-800" />
-            <div className="mx-auto mt-4 h-8 w-96 animate-pulse rounded-lg bg-gray-800" />
+            <div className="mx-auto h-8 w-96 animate-pulse bg-gray-800" />
+            <div className="mx-auto mt-4 h-8 w-96 animate-pulse  bg-gray-800" />
           </div>
         ) : null}
 
-        <div className="mx-auto mb-8 flex h-12 w-96 max-w-full items-center rounded-lg border border-white/10 bg-white/5 px-4 text-xl text-white">
+        <div className="mx-auto mb-8 flex h-12 w-96 max-w-full items-center  border border-white/10 bg-white/5 px-4 text-xl text-gray-800">
           <SearchIcon />
           <input
             type="text"
@@ -83,12 +83,12 @@ function App() {
               }
             }}
             placeholder="Search by ID"
-            className="w-full bg-transparent px-4 text-white focus:outline-none"
+            className="w-full bg-transparent px-4 text-gray-800 focus:outline-none"
           />
         </div>
 
         {isSearching ? (
-          <div className="mx-auto !h-60 !w-60 animate-pulse rounded-lg bg-gray-800" />
+          <div className="mx-auto !h-60 !w-60 animate-pulse  bg-gray-800" />
         ) : null}
 
         {search && nft && !isSearching ? (
@@ -98,7 +98,7 @@ function App() {
         {isLoading && (
           <div className="mx-auto flex flex-wrap items-center justify-center gap-8">
             {Array.from({ length: nftsPerPage }).map((_, i) => (
-              <div className="!h-60 !w-60 animate-pulse rounded-lg bg-gray-800" />
+              <div className="!h-60 !w-60 animate-pulse  bg-gray-800" />
             ))}
           </div>
         )}

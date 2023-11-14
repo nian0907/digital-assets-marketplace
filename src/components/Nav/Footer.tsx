@@ -1,7 +1,7 @@
 import { BigNumber } from "ethers";
 import type { FC } from "react";
 import { PaginationHelper } from "../PaginationHelper";
-import { PoweredBy } from "../PoweredBy";
+
 
 interface IProps {
   page: number;
@@ -35,7 +35,7 @@ export const Footer: FC<IProps> = ({
         setPage={setPage}
         loading={loading}
       />
-      <PoweredBy />
+      
     </div>
   );
 };
